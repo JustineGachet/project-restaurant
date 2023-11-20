@@ -1,0 +1,74 @@
+  <h1>Formulaire de réservation</h1>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <!-- Lasttname -->
+    <label for="lastname" class="form-label">Nom *</label>
+    <input id="lastname" type="text" formControlName="lastnameField" class="form-control"/>
+    <div *ngIf="profileForm.get('lastnameField')?.invalid && profileForm.get('lastnameField')?.touched" class="invalid-feedback ">
+      Le nom est requis.
+    </div>
+
+    <!-- Firstname -->
+    <label for="firstname" class="form-label">Prénom *</label>
+    <input id="firstname" type="text" formControlName="firstnameField" class="form-control"/>
+    <div *ngIf="profileForm.get('firstnameField')?.invalid && profileForm.get('firstnameField')?.touched" class="invalid-feedback">
+      Le prénom est requis.
+    </div>
+
+    <!-- Mail -->
+    <label for="mail" class="form-label">Email</label>
+    <input id="mail" type="mail" formControlName="mailField" class="form-control"/>
+
+    <!-- Phone -->
+    <label for="phone" class="form-label">Téléphone *</label>
+    <input id="phone" type="text" formControlName="phoneField" class="form-control"/>
+    <div *ngIf="profileForm.get('phoneField')?.invalid && profileForm.get('phoneField')?.touched" class="invalid-feedback">
+      Le numéro de téléphone est requis.
+    </div>
+
+    <!-- Date -->
+    <label for="date" class="form-label">Date </label>
+    <input id="date" type="date" formControlName="dateField" class="form-control"/>
+
+    <!-- Heure -->
+    <label for="hour" class="form-label">Horaires</label>
+    <div class="time-slot-row">
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('12:00')" (click)="selectTimeSlot('12:00')" [class.selected-button]="selectedTimeSlot === '12:00'">12:00</button>
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('12:15')" (click)="selectTimeSlot('12:15')" [class.selected-button]="selectedTimeSlot === '12:15'">12:15</button>
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('12:30')" (click)="selectTimeSlot('12:30')" [class.selected-button]="selectedTimeSlot === '12:30'">12:30</button>
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('12:45')" (click)="selectTimeSlot('12:45')" [class.selected-button]="selectedTimeSlot === '12:45'">12:45</button>
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('13:00')" (click)="selectTimeSlot('13:00')" [class.selected-button]="selectedTimeSlot === '13:00'">13:00</button>
+    </div> 
+    <div class="time-slot-row">
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('19:00')" (click)="selectTimeSlot('19:00')" [class.selected-button]="selectedTimeSlot === '19:00'">19:00</button>
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('19:15')" (click)="selectTimeSlot('19:15')" [class.selected-button]="selectedTimeSlot === '19:15'">19:15</button>
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('19:30')" (click)="selectTimeSlot('19:30')" [class.selected-button]="selectedTimeSlot === '19:30'">19:30</button>
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('19:45')" (click)="selectTimeSlot('19:45')" [class.selected-button]="selectedTimeSlot === '19:45'">19:45</button>
+      <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('20:00')" (click)="selectTimeSlot('20:00')" [class.selected-button]="selectedTimeSlot === '20:00'">20:00</button>
+    </div>
+
+    <!-- Couvert -->
+    <label for="seat" class="form-label">Nombre de couverts</label>
+    <select id="seat" formControlName="seatField" class="form-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+    </select>
+
+    <!-- Allergies -->
+    <label for="allergie" class="form-label">Allergies</label>
+    <input id="allergie" type="text" formControlName="allergieField" class="form-control"/>
+    
+    <!-- Bouton de validation -->
+    <button id="btnReservation" class="validationButton btn btn-success" type="submit">Réserver</button>
+    
+    <!-- <p>Validation du formulaire {{ profileForm.valid }}</p> -->
+    <!-- <p>{{ profileForm.value | json }}</p> -->
+
+  </form>

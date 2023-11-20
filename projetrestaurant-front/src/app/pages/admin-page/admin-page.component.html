@@ -1,0 +1,20 @@
+<div class="admin-table-container ">
+    <h1> Page d'administration </h1>
+
+    <h2>Mes réservations</h2>
+
+    <app-admin-table [data]="reservation" [columns]="reservationColumns"></app-admin-table>
+
+    <h2> Mes menus</h2>
+
+    <app-admin-table [data]="menus" [columns]="menuColumns"></app-admin-table>
+
+    <h2>Mes plats</h2>
+
+    <app-admin-table [data]="foodList" [columns]="foodListColumns"></app-admin-table>
+
+    <h2>Mes horaires</h2>
+
+    <app-admin-table [data]="schedule" [columns]="scheduleColumns" (onUserEdit)="updateShedule($event)"></app-admin-table>
+</div>
+

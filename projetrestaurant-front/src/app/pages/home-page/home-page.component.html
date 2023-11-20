@@ -1,0 +1,26 @@
+<!-- Bannière -->
+
+<div class="banner">
+    <h1>Une promesse d'un voyage dans l'univers culinaire de la Savoie</h1>
+</div>
+
+
+<!-- Les plats préférés sur la page d'accueil -->
+
+<app-section 
+    title="Nos meilleurs plats"
+    [btn]="{
+        text: 'RESERVATION',
+        url: '/reservation-page'
+    }"
+> 
+    <div class="card-group">
+        <app-card *ngFor="let item of foodList"
+            [title]="item.title" 
+            [text]="item.description" 
+            [image]="item.image_url" 
+        />
+    </div>
+</app-section>
+
+

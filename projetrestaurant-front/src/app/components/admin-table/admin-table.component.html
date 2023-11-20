@@ -1,0 +1,14 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th *ngFor="let column of columns">{{ column.title }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let line of data">
+            <td *ngFor="let column of columns" contenteditable (input)="onCellEdit(line, column.keyToDisplay, $event.target)">
+                {{ line[column.keyToDisplay] || '-' }}
+            </td>
+        </tr>         
+    </tbody>
+</table>

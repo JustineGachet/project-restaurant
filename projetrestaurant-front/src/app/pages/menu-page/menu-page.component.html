@@ -1,0 +1,15 @@
+<app-section 
+    title="Nos menus"
+    [btn]="{
+        text: 'Voir plus',
+        url: '/food-page'
+    }"
+> 
+    <div class="card-group">
+        <app-card *ngFor="let item of menus"
+            [title]="item.title" 
+            [text]="item.description" 
+            [image]="item.image_url" 
+            ></app-card>
+    </div>
+</app-section>

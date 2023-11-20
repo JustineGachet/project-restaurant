@@ -1,0 +1,75 @@
+
+<!-- Entrees -->
+
+<app-section 
+    title="Nos entrées"
+    [btn]="{
+        text: 'Voir plus',
+        url: '/food-page'
+    }"
+> 
+    <div class="card-group">
+        <ng-container *ngFor="let item of foodList">
+            <app-card *ngIf="item.food_type === 'entrée' "
+                [title]="item.title" 
+                [text]="item.description" 
+                [image]="item.image_url" 
+             ></app-card>
+        </ng-container>
+    </div>
+</app-section>
+
+<app-section 
+    title="Nos plats"
+    [btn]="{
+        text: 'Voir plus',
+        url: '/food-page'
+    }"
+> 
+    <div class="card-group">
+        <ng-container *ngFor="let item of foodList">
+            <app-card *ngIf="item.food_type === 'plat' "
+                [title]="item.title" 
+                [text]="item.description" 
+                [image]="item.image_url" 
+             ></app-card>
+        </ng-container>
+    </div>
+</app-section>
+
+<app-section 
+    title="Nos desserts"
+    [btn]="{
+        text: 'Voir plus',
+        url: '/food-page'
+    }"
+> 
+    <div class="card-group">
+        <ng-container *ngFor="let item of foodList">
+            <app-card *ngIf="item.food_type === 'dessert' "
+                [title]="item.title" 
+                [text]="item.description" 
+                [image]="item.image_url" 
+             ></app-card>
+        </ng-container>
+    </div>
+</app-section>
+
+<app-section 
+    title="Nos boissons"
+    [btn]="{
+        text: 'Voir plus',
+        url: '/food-page'
+    }"
+> 
+    <div class="card-group">
+        <ng-container *ngFor="let item of foodList">
+            <app-card *ngIf="item.food_type === 'boisson' "
+                [title]="item.title" 
+                [text]="item.description" 
+                [image]="item.image_url" 
+             ></app-card>
+        </ng-container>
+    </div>
+</app-section>
+

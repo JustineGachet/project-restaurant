@@ -1,0 +1,108 @@
+/* Bannière photo */
+
+
+.banner
+{
+    background-image: url(../../../assets/restaurant_banner.jpg);
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner h1
+{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Services sur page accueil */
+
+.services-home-page
+{
+    background-color: var(--secondary-color);
+
+}
+
+.row 
+{
+    max-width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+h1
+{
+    font-size: 15px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.services-home-page
+{
+    padding: 10px;
+    margin: 10px;
+}
+
+.services-list 
+{
+    margin: 30px;
+}
+
+.services-list a
+{
+    color: white;
+    background-color: red;
+    padding: 15px 20px;
+    margin-top: 30px;
+    text-decoration: none;
+
+}
+
+.services-list a:hover
+{
+    background-color: rgb(128, 19, 19);
+}
+
+/* Voitures pages accueil */
+
+.food-home-page {
+    color: white;
+    margin: 30px;
+
+}
+
+.card-group {
+    display: flex;
+    justify-content: space-around;
+    border: none;
+
+}
+
+.serviceButton{
+    display: block;
+}
+
+.review {
+    display: flex;
+    justify-content: center;
+
+}
+
+.id {
+
+    background-color: black;
+}
+
+#réservation {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+

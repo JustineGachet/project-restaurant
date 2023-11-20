@@ -1,0 +1,29 @@
+<div class="login-page">
+
+    <div class="form">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        
+        <label for="email">E-mail :</label>
+        <input type="email" id="email" formControlName="email">
+
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" formControlName="password">
+
+        <div class="my-3 text-alert">
+          <div *ngIf="profileForm.get('email')?.hasError('required') && profileForm.get('email')?.touched">
+            L'e-mail est obligatoire.
+          </div>
+          <div *ngIf="profileForm.get('password')?.hasError('required') && profileForm.get('password')?.touched">
+            Le mot de passe est obligatoire.
+          </div>
+          <div *ngIf="error">
+            Les identifiants sont érronés 
+          </div>
+        </div>
+
+        <button type="submit">se connecter</button>
+      </form>
+    </div>
+  </div>
+  

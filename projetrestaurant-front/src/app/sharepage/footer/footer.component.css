@@ -1,0 +1,43 @@
+.footer
+{
+    overflow: hidden;
+    position: sticky;
+    top: 100%;
+    background-color: rgb(48, 46, 46);
+    color: white;
+    padding: 20px 20px;
+    font-size: 12px;
+    margin-top: 30px;
+
+}
+
+h1{
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.socials {
+    display: flex;
+    padding: 0;
+    margin: 0; 
+    gap: 10px;
+    justify-content: center;
+}
+
+.socials .social {
+    list-style: none;
+    cursor: pointer;
+}
+
+.socials .social:hover {
+    color: green;
+}
+
+li {
+    list-style-type: none;
+}

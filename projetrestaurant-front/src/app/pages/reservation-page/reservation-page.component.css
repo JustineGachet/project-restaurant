@@ -1,0 +1,56 @@
+* {
+    width: 20vw;
+    display: block;
+    margin-top: 0.2rem;
+    padding: 0.3rem 0.2rem;
+}
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+form {
+    width: max-content;
+    margin: auto;
+}
+
+.selected-button {
+    background-color: #37875f; /* Couleur de fond pour le bouton sélectionné */
+    color: white; /* Couleur du texte pour le bouton sélectionné */
+  }
+
+ /* Couleur bouton réservation */
+
+.validationButton {
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+/* Boutons des horaires */
+
+.time-slot-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-time-slot {
+    font-size: 12px; /* Taille de la police */
+    width: 60px; /* Largeur du bouton */
+    height: 40px; /* Hauteur du bouton */
+    margin: 5px;
+}
+
+.time-slot-row .button-time-slot:first-child {
+    margin-left: 0;
+}
+
+.time-slot-row .button-time-slot:last-child {
+    margin-right: 0;
+}
+

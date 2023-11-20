@@ -1,0 +1,14 @@
+
+section {
+    margin-top: 50px;
+    display: block;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
+}
