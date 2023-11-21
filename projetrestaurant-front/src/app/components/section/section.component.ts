@@ -6,6 +6,7 @@ type Btn = {
   url: string;
 }
 
+
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',

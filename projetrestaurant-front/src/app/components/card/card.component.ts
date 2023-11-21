@@ -31,10 +31,14 @@ export class CardComponent {
 
   constructor(private router: Router) {}
 
+// fonction de redirection quand on clique sur le bouton
+
   onBtnClick() {
     if (!this.btn?.url) return;
     this.router.navigate([this.btn.url]);
   }
+
+// fonction de reformatage du prix
 
   formatedPrice() {
     const formatter = new Intl.NumberFormat('fr-FR', {

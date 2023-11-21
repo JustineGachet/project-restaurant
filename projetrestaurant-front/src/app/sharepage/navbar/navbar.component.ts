@@ -8,5 +8,6 @@ import { ApiService } from 'src/app/services/api/api.service';
 })
 export class NavbarComponent {
   constructor(private serviceAPI: ApiService) {}
+  public isCollapsed = true;
   user: { firstname: string | null, lastname: string | null, isAdmin: boolean } = this.serviceAPI.user
 }

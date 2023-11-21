@@ -11,7 +11,6 @@ import { ConfirmationPageComponent } from './pages/confirmation-page/confirmatio
 import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
-  {path: 'admin-page', component: AdminPageComponent/*, canActivate: [AdminGuard]*/},
   {path:"home-page",component:HomePageComponent},
   {path:"food-page",component:FoodPageComponent},
   {path:"login-page",component:LoginPageComponent},
@@ -19,6 +18,7 @@ const routes: Routes = [
   {path:"reservation-page", component:ReservationPageComponent},
   {path:"login",component:LoginComponent},
   {path:"reservation-confirmation-page",component:ConfirmationPageComponent},
+  {path:"admin-page", component: AdminPageComponent, canActivate: [AdminGuard]},
 ]; 
  
 @NgModule({

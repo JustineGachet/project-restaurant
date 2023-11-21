@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api/api.service';
 
@@ -15,7 +16,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 })
 
 export class ReservationPageComponent {
-  constructor(private serviceAPI: ApiService) {}
+  constructor(private serviceAPI: ApiService, private router: Router) {}
 
   selectedTimeSlot: string = '';
   profileForm = new FormGroup ({
@@ -45,9 +46,14 @@ export class ReservationPageComponent {
     this.selectedTimeSlot = timeSlot;
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.profileForm.valid) { 
-      this.serviceAPI.createReservation(this.profileForm.value)
+      try {
+        await this.serviceAPI.createReservation(this.profileForm.value);
+        this.router.navigate(['/reservation-confirmation-page']);
+      } catch (error) {
+        console.warn(error);
+      }
     }
   }
 }

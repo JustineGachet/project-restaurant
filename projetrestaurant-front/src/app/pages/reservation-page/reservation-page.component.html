@@ -1,37 +1,48 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <h1>Formulaire de réservation</h1>
 
-  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-
-    <!-- Lasttname -->
+  <!-- Lasttname -->
+  <div class="form-group pb-3">
     <label for="lastname" class="form-label">Nom *</label>
     <input id="lastname" type="text" formControlName="lastnameField" class="form-control"/>
     <div *ngIf="profileForm.get('lastnameField')?.invalid && profileForm.get('lastnameField')?.touched" class="invalid-feedback ">
       Le nom est requis.
     </div>
+  </div>
 
-    <!-- Firstname -->
+  <!-- Firstname -->
+  <div class="form-group pb-3">
     <label for="firstname" class="form-label">Prénom *</label>
     <input id="firstname" type="text" formControlName="firstnameField" class="form-control"/>
     <div *ngIf="profileForm.get('firstnameField')?.invalid && profileForm.get('firstnameField')?.touched" class="invalid-feedback">
       Le prénom est requis.
     </div>
+  </div>
 
-    <!-- Mail -->
+
+  <!-- Mail -->
+  <div class="form-group pb-3">
     <label for="mail" class="form-label">Email</label>
     <input id="mail" type="mail" formControlName="mailField" class="form-control"/>
+  </div>
 
-    <!-- Phone -->
+  <!-- Phone -->
+  <div class="form-group pb-3">
     <label for="phone" class="form-label">Téléphone *</label>
     <input id="phone" type="text" formControlName="phoneField" class="form-control"/>
     <div *ngIf="profileForm.get('phoneField')?.invalid && profileForm.get('phoneField')?.touched" class="invalid-feedback">
       Le numéro de téléphone est requis.
     </div>
+  </div>
 
-    <!-- Date -->
+  <!-- Date -->
+  <div class="form-group pb-3">
     <label for="date" class="form-label">Date </label>
     <input id="date" type="date" formControlName="dateField" class="form-control"/>
+  </div>
 
-    <!-- Heure -->
+  <!-- Heure -->
+  <div class="form-group pb-3">
     <label for="hour" class="form-label">Horaires</label>
     <div class="time-slot-row">
       <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('12:00')" (click)="selectTimeSlot('12:00')" [class.selected-button]="selectedTimeSlot === '12:00'">12:00</button>
@@ -47,8 +58,11 @@
       <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('19:45')" (click)="selectTimeSlot('19:45')" [class.selected-button]="selectedTimeSlot === '19:45'">19:45</button>
       <button class="button-time-slot btn btn-light" type="button" [disabled]="isTimeSlotTaken('20:00')" (click)="selectTimeSlot('20:00')" [class.selected-button]="selectedTimeSlot === '20:00'">20:00</button>
     </div>
+  </div>
 
-    <!-- Couvert -->
+
+  <!-- Couvert -->
+  <div class="form-group pb-3">
     <label for="seat" class="form-label">Nombre de couverts</label>
     <select id="seat" formControlName="seatField" class="form-select">
       <option value="1">1</option>
@@ -60,15 +74,15 @@
       <option value="7">7</option>
       <option value="8">8</option>
     </select>
+  </div>
+  
 
-    <!-- Allergies -->
+  <!-- Allergies -->
+  <div class="form-group pb-3">
     <label for="allergie" class="form-label">Allergies</label>
     <input id="allergie" type="text" formControlName="allergieField" class="form-control"/>
-    
-    <!-- Bouton de validation -->
-    <button id="btnReservation" class="validationButton btn btn-success" type="submit">Réserver</button>
-    
-    <!-- <p>Validation du formulaire {{ profileForm.valid }}</p> -->
-    <!-- <p>{{ profileForm.value | json }}</p> -->
+  </div>
 
-  </form>
+
+  <button id="btnReservation" class="validationButton btn btn-success" type="submit">Réserver</button>
+</form>
